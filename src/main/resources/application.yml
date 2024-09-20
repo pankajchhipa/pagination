@@ -1,0 +1,37 @@
+application1:
+  name: pankaj
+  age: 15
+  cost: free
+
+spring:
+  application:
+    name: myapplication
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/hotel
+    username : root
+    password :
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+#  security:
+#    user:
+#      password: pankaj
+#      name: pankaj
+
+
+
+server:
+  port: 8081
+
+
+#logging:
+#  level:
+#    root: debug
+
+
+
