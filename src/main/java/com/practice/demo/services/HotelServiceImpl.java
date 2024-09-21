@@ -16,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -39,7 +40,7 @@ public class HotelServiceImpl implements HotelService {
                 Sort.by("hotelid").ascending());
         Page<HotelEntity> pagedResult = repository.findAll(paging);
 
-        List<HotelEntity> objects = pagedResult.hasContent() ? pagedResult.getContent() : List.of();
+        List<HotelEntity> objects = pagedResult.hasContent() ? pagedResult.getContent() : new ArrayList<>();
         List<HotelEntity> all = repository.findAll();
         return  HotelResponse.builder().hotel(objects).totalData(all.size()).build();
     }
